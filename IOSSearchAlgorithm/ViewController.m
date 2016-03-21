@@ -101,23 +101,7 @@ alpha:(a)/255.0f])
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"selected the row");
     
-    CGFloat kPadding = 20.f;
-    CGFloat itemHeight = 84.0f;
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    [flowLayout setItemSize:CGSizeMake(fDeviceWidth, itemHeight)];
-    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    flowLayout.sectionInset = UIEdgeInsetsMake(0, kPadding , 0, kPadding);
-    flowLayout.minimumLineSpacing = 0.0f;
-    flowLayout.minimumInteritemSpacing = 0.0f;
-    
-//    NMSearchListViewController *viewController = [[NMSearchListViewController alloc] initWithCollectionViewLayout:flowLayout];
-//    viewController.navType = indexPath.row;
-//    NSString* keyWord =  _searchBar.text;
-//    viewController.seachKeyWord = keyWord;
-//    
-//    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 
