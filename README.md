@@ -12,4 +12,4 @@
 3. 最后将搜索到的匹配的tag通过二分插入法插入有序的序列中。
 
 
-![](https://github.com/ixshells/IOSSearchAlgorithm/resouce/f.png)  
+![](https://github.com/ixshells/IOSSearchAlgorithm/blob/master/resouce/f.png)  
