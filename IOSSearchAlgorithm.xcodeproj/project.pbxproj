@@ -13,6 +13,8 @@
 		2505E3101C9E9DF800E00722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2505E30F1C9E9DF800E00722 /* Assets.xcassets */; };
 		2505E31E1C9E9DF900E00722 /* IOSSearchAlgorithmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2505E31D1C9E9DF900E00722 /* IOSSearchAlgorithmTests.m */; };
 		2505E3291C9E9DF900E00722 /* IOSSearchAlgorithmUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2505E3281C9E9DF900E00722 /* IOSSearchAlgorithmUITests.m */; };
+		2505E33B1CA116CD00E00722 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 2505E3371CA116CD00E00722 /* pinyin.c */; };
+		2505E33C1CA116CD00E00722 /* SearchKeywordsAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 2505E33A1CA116CD00E00722 /* SearchKeywordsAlgorithm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,10 @@
 		2505E3241C9E9DF900E00722 /* IOSSearchAlgorithmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSSearchAlgorithmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2505E3281C9E9DF900E00722 /* IOSSearchAlgorithmUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSSearchAlgorithmUITests.m; sourceTree = "<group>"; };
 		2505E32A1C9E9DF900E00722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2505E3371CA116CD00E00722 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
+		2505E3381CA116CD00E00722 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		2505E3391CA116CD00E00722 /* SearchKeywordsAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchKeywordsAlgorithm.h; sourceTree = "<group>"; };
+		2505E33A1CA116CD00E00722 /* SearchKeywordsAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchKeywordsAlgorithm.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		2505E3021C9E9DF800E00722 /* IOSSearchAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
+				2505E3361CA116BF00E00722 /* Algorithm */,
 				2505E3061C9E9DF800E00722 /* AppDelegate.h */,
 				2505E3071C9E9DF800E00722 /* AppDelegate.m */,
 				2505E3091C9E9DF800E00722 /* ViewController.h */,
@@ -132,6 +139,17 @@
 				2505E32A1C9E9DF900E00722 /* Info.plist */,
 			);
 			path = IOSSearchAlgorithmUITests;
+			sourceTree = "<group>";
+		};
+		2505E3361CA116BF00E00722 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				2505E3371CA116CD00E00722 /* pinyin.c */,
+				2505E3381CA116CD00E00722 /* pinyin.h */,
+				2505E3391CA116CD00E00722 /* SearchKeywordsAlgorithm.h */,
+				2505E33A1CA116CD00E00722 /* SearchKeywordsAlgorithm.m */,
+			);
+			name = Algorithm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2505E33B1CA116CD00E00722 /* pinyin.c in Sources */,
+				2505E33C1CA116CD00E00722 /* SearchKeywordsAlgorithm.m in Sources */,
 				2505E30B1C9E9DF800E00722 /* ViewController.m in Sources */,
 				2505E3081C9E9DF800E00722 /* AppDelegate.m in Sources */,
 				2505E3051C9E9DF800E00722 /* main.m in Sources */,

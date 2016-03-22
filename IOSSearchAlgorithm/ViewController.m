@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SearchKeywordsAlgorithm.h"
 
 #define fDeviceWidth ([UIScreen mainScreen].bounds.size.width)
 #define fDeviceHeight ([UIScreen mainScreen].bounds.size.height)
@@ -25,6 +26,8 @@ alpha:(a)/255.0f])
     UISearchBar * _searchBar;
     UISearchDisplayController * _searchDisplayController;
     UITableView * _tableView;
+    NSArray *_tagArray;
+    NSMutableArray* _searchResultArray;
 }
 
 @end
@@ -39,9 +42,8 @@ alpha:(a)/255.0f])
     _searchBar.delegate = self;
     [[[[ _searchBar.subviews objectAtIndex : 0 ] subviews ] objectAtIndex : 0 ] removeFromSuperview ];
     
-    
-    
-    
+    _tagArray =[NSArray arrayWithObjects:@"空调移机", @"二手空调", @"空调回收", @"空调维修", @"汽车空调清洗", @"水温空调设计",  nil];
+    _searchResultArray = [NSMutableArray new];
     
     _searchBar.backgroundColor = RGB(248, 94, 32);
     [_searchBar setAutocapitalizationType:UITextAutocapitalizationTypeNone];
@@ -67,6 +69,15 @@ alpha:(a)/255.0f])
     
 }
 
+
+-(void)searchFilter : (NSString *)searchText
+{
+    SearchKeywordsAlgorithm* search = [SearchKeywordsAlgorithm new];
+    [search searchByFuzzy:_tagArray keyStr:searchText];
+    
+    _searchResultArray = search.fullStringResultArray;
+}
+
 #pragma mark -
 #pragma mark Table view data source
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,7 +88,7 @@ alpha:(a)/255.0f])
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if(tableView == _searchDisplayController.searchResultsTableView)
     {
-//        return [_suggestItems count];
+        return [_searchResultArray count];
     }
     return 0;
 }
@@ -93,7 +104,7 @@ alpha:(a)/255.0f])
     }
     
     {
-//        cell.textLabel.text = [_suggestItems objectAtIndex:indexPath.row];
+        cell.textLabel.text = [_searchResultArray objectAtIndex:indexPath.row];
     }
     
     return cell;
@@ -107,7 +118,7 @@ alpha:(a)/255.0f])
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    
+    [self searchFilter:searchText];
 }
 #pragma mark -
 #pragma mark UISearchDisplayController Delegate Methods
