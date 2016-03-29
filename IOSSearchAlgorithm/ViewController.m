@@ -42,7 +42,7 @@ alpha:(a)/255.0f])
     _searchBar.delegate = self;
     [[[[ _searchBar.subviews objectAtIndex : 0 ] subviews ] objectAtIndex : 0 ] removeFromSuperview ];
     
-    _tagArray =[NSArray arrayWithObjects:@"空调移机", @"二手空调", @"空调回收", @"空调维修", @"汽车空调清洗", @"水温空调设计",  nil];
+    _tagArray = [self readLocalData];
     _searchResultArray = [NSMutableArray new];
     
     _searchBar.backgroundColor = RGB(248, 94, 32);
@@ -63,6 +63,22 @@ alpha:(a)/255.0f])
     
     
 }
+
+-(NSArray *)readLocalData {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"keyword"ofType:@"csv"];
+    
+    NSString *contents = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSArray *contentsArray = [contents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    NSInteger idx;
+    for (idx = 0; idx < contentsArray.count; idx++){
+        NSString* currentContent = [contentsArray objectAtIndex:idx];
+        NSLog(@"%@",currentContent);
+    }
+    
+    return contentsArray;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
